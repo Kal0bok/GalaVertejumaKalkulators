@@ -1,6 +1,7 @@
 package pakotne;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -10,6 +11,8 @@ public class GalvenaKlase {
 		int studSk, kritSk;
 		Scanner scan = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("0.#");
+		
+		ArrayList<Vert> gar = new ArrayList<>();
 		
 		 
 		// Audzēkņu skaita ievade
@@ -86,6 +89,95 @@ public class GalvenaKlase {
 			sk++;
 		}
 		}
+		
+		static void vertejumi() {
+			
+			String[] masSar = new String[gar.size()];
+            for (int i = 0; i < gar.size(); i++) {
+            	masSar[i] = gar.get(i).info();
+            }
+            String izvMas = (String) JOptionPane.showInputDialog(null,
+                    "Izvēlies mašīnu no garāžas:", "Garāžas izvēle",
+                    JOptionPane.QUESTION_MESSAGE, null, masSar, masSar[0]);
+            if (izvMas != null) {
+                for (Masina m : gar) {
+                    if (m.info().equals(izvMas)) {
+                        aktMas = m;
+                        JOptionPane.showMessageDialog(null,
+                                "Izvēlēta mašīna:\n" + aktMas.info(),
+                                "Informācija", JOptionPane.INFORMATION_MESSAGE);
+                        break;
+                    }
+                    
+                    static void labotvert() {
+            			
+            			String[] masSar = new String[gar.size()];
+                        for (int i = 0; i < gar.size(); i++) {
+                        	masSar[i] = gar.get(i).info();
+                        }
+                        String izvMas = (String) JOptionPane.showInputDialog(null,
+                                "Izvēlies mašīnu no garāžas:", "Garāžas izvēle",
+                                JOptionPane.QUESTION_MESSAGE, null, masSar, masSar[0]);
+                        if (izvMas != null) {
+                            for (Masina m : gar) {
+                                if (m.info().equals(izvMas)) {
+                                    aktMas = m;
+                                    JOptionPane.showMessageDialog(null,
+                                            "Izvēlēta mašīna:\n" + aktMas.info(),
+                                            "Informācija", JOptionPane.INFORMATION_MESSAGE);
+                                    break;
+                                }
+                                
+                                static void labotkrit() {
+                        			
+                        			String[] masSar = new String[gar.size()];
+                                    for (int i = 0; i < gar.size(); i++) {
+                                    	masSar[i] = gar.get(i).info();
+                                    }
+                                    String izvMas = (String) JOptionPane.showInputDialog(null,
+                                            "Izvēlies mašīnu no garāžas:", "Garāžas izvēle",
+                                            JOptionPane.QUESTION_MESSAGE, null, masSar, masSar[0]);
+                                    if (izvMas != null) {
+                                        for (Masina m : gar) {
+                                            if (m.info().equals(izvMas)) {
+                                                aktMas = m;
+                                                JOptionPane.showMessageDialog(null,
+                                                        "Izvēlēta mašīna:\n" + aktMas.info(),
+                                                        "Informācija", JOptionPane.INFORMATION_MESSAGE);
+                                                break;
+                                            }
+                                            
+                                            static void labotkritsvar() {
+                                    			
+                                    			String[] masSar = new String[gar.size()];
+                                                for (int i = 0; i < gar.size(); i++) {
+                                                	masSar[i] = gar.get(i).info();
+                                                }
+                                                String izvMas = (String) JOptionPane.showInputDialog(null,
+                                                        "Izvēlies mašīnu no garāžas:", "Garāžas izvēle",
+                                                        JOptionPane.QUESTION_MESSAGE, null, masSar, masSar[0]);
+                                                if (izvMas != null) {
+                                                    for (Masina m : gar) {
+                                                        if (m.info().equals(izvMas)) {
+                                                            aktMas = m;
+                                                            JOptionPane.showMessageDialog(null,
+                                                                    "Izvēlēta mašīna:\n" + aktMas.info(),
+                                                                    "Informācija", JOptionPane.INFORMATION_MESSAGE);
+                                                            break;
+                                                        }
+                }
+            }
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		scan.close();
 			
 		}

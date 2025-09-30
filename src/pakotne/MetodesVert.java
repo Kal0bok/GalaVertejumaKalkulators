@@ -60,15 +60,15 @@ public class MetodesVert {
 				break;
 				
 			case "Labot kriteriju":
-	
+				labotkrit();
 				break;
 	
 			case "Labot kriterija svaru":
-	
+				labotkritsvar();
 				break;
 	
 			case "Labot ieguto vertejumu":
-	
+				labotvert();
 				break;
 	
 			case "Aprekinat gala vertejumu":
