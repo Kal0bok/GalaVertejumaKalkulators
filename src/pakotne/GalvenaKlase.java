@@ -11,7 +11,6 @@ public class GalvenaKlase {
 		Scanner scan = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("0.#");
 		
-		
 		 
 		// Audzēkņu skaita ievade
 		static void sakitaievade() {

@@ -29,7 +29,62 @@ public class MetodesVert {
 						+ "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 			}
 			
+			String izvele;
+
+	        do {
+	            izvele = (String) JOptionPane.showInputDialog(null,
+	                    "Izvēlies darbību", "Darbību izvēle",
+	                    JOptionPane.QUESTION_MESSAGE, null, darbsar, darbsar[0]);
+
+	            if (izvele == null) {
+	                izvele = "Apturēt";
+	            }
 			
+			switch(izvele) {
+			case "Ievadit audzekņus":
+				sakitaievade();
+				varduzv();
+				break;
+				
+			case "Ievadit kriterijus":
+				kritsk();
+				break;
+				
+			case "Ievadit kriteriju svarus":
+				krit()
+				minimal();
+				break;
+				
+			case "Ievadit vertejumus":
+				
+				break;
+				
+			case "Labot kriteriju":
+	
+				break;
+	
+			case "Labot kriterija svaru":
+	
+				break;
+	
+			case "Labot ieguto vertejumu":
+	
+				break;
+	
+			case "Aprekinat gala vertejumu":
+	
+				break;
+				
+			case "Saglabat rezultatus faila":
+				
+				break;
+				
+			case "Nolasit rezultatus faila":
+				
+				break;
+	
+	break;
+			}
 			
 			
 			
