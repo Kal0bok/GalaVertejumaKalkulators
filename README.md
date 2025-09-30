@@ -16,3 +16,5 @@ Java programmēšanas valodā izstrādātā programmatūras projekta sākotnēj�
 	- [ ] Aprēķināt gala vērtējumu
 	- [ ] Saglabāt rezultātus failā
 	- [ ] Nolasīt rezultātus no faila
+
+https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.emojiall.com%2Flv%2Fimage%2F%25E2%2598%25B9&psig=AOvVaw0A9KFio5QHg1lo67H65ER1&ust=1759309790986000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCPCBkOuRgJADFQAAAAAdAAAAABAE
