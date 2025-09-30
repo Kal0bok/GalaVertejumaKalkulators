@@ -92,22 +92,41 @@ public class GalvenaKlase {
 		
 		static void vertejumi() {
 			
-			String[] masSar = new String[gar.size()];
-            for (int i = 0; i < gar.size(); i++) {
-            	masSar[i] = gar.get(i).info();
+			String[] vert = new String[vert.size()];
+            for (int i = 0; i < vert.size(); i++) {
+            	vert[i] = krit.get(i).info();
             }
             String izvMas = (String) JOptionPane.showInputDialog(null,
-                    "Izvēlies mašīnu no garāžas:", "Garāžas izvēle",
-                    JOptionPane.QUESTION_MESSAGE, null, masSar, masSar[0]);
+                    "Izvēlies Atzimi:",
+                    JOptionPane.QUESTION_MESSAGE, null, vert, vert[0]);
             if (izvMas != null) {
-                for (Masina m : gar) {
+                for (vertejums m : krit) {
                     if (m.info().equals(izvMas)) {
-                        aktMas = m;
+                        krit = m;
                         JOptionPane.showMessageDialog(null,
-                                "Izvēlēta mašīna:\n" + aktMas.info(),
+                                "Izvēlēta atzime:\n" + krit.info(),
                                 "Informācija", JOptionPane.INFORMATION_MESSAGE);
                         break;
                     }
+                    
+                    static void kritetiji() {
+            			
+            			String[] vert = new String[vert.size()];
+                        for (int i = 0; i < vert.size(); i++) {
+                        	vert[i] = krit.get(i).info();
+                        }
+                        String izvMas = (String) JOptionPane.showInputDialog(null,
+                                "Izvēlies Atzimi:",
+                                JOptionPane.QUESTION_MESSAGE, null, vert, vert[0]);
+                        if (izvMas != null) {
+                            for (vertejums m : krit) {
+                                if (m.info().equals(izvMas)) {
+                                    krit = m;
+                                    JOptionPane.showMessageDialog(null,
+                                            "Izvēlēta kriterijs:\n" + aktMas.info(),
+                                            "Informācija", JOptionPane.INFORMATION_MESSAGE);
+                                    break;
+                                }
                     
                     static void labotvert() {
             			

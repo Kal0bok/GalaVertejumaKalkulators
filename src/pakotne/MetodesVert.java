@@ -56,7 +56,7 @@ public class MetodesVert {
 				break;
 				
 			case "Ievadit vertejumus":
-				
+				kritetiji()
 				break;
 				
 			case "Labot kriteriju":
