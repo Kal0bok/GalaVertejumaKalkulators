@@ -44,7 +44,8 @@ public class GalvenaKlase {
         semestraVertejums = new double[studSk];
         scan.nextLine(); 
     }
-
+}
+}
    
 
     public void defKrit() {
@@ -56,17 +57,6 @@ public class GalvenaKlase {
         }
     }
 
-    public void kritSvar() {
-        int maxSvars = 100;
-        for (int i = 0; i < kriteriji.length; i++) {
-            double atlSvars;
-            do {
-                System.out.println("Ievadi " + (i + 1) + ". kritērija svaru (max: " + maxSvars + ")");
-                while (!scan.hasNextInt()) {
-                    System.out.println("Ievadi " + (i + 1) + ". kritērija svaru");
-                    scan.next();
-                }
-            scan.nextLine(); 
-        }
+ 
     }
 }

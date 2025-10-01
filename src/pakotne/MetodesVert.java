@@ -39,14 +39,7 @@ package pakotne;
      }
  }
 
- public void vertApr() {
-     for (int i = 0; i < studenti.length; i++) {
-         double rezultats = 0;
-         for (int j = 0; j < kriteriji.length; j++) {
-             rezultats += ((double) kriterijaSvars[j] / 100) * kriterijaVertejums[i][j];
-         }
-         semestraVertejums[i] = rezultats;
-     }
+ 
  }
 
 
