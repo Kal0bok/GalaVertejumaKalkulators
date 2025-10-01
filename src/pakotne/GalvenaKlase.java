@@ -45,14 +45,7 @@ public class GalvenaKlase {
         scan.nextLine(); 
     }
 
-    public void vardUzv() {
-        for (int i = 0; i < studenti.length; i++) {
-            do {
-                System.out.println("Ievadi " + (i + 1) + ". studentu");
-                studenti[i] = scan.nextLine();
-            } while (!studenti[i].matches("^[\\p{L} ]+$"));
-        }
-    }
+   
 
     public void defKrit() {
         for (int i = 0; i < kriteriji.length; i++) {
