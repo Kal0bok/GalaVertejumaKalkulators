@@ -15,8 +15,10 @@ public class GalvenaKlase {
         int[] kriterijaSvars = null;
         int[][] kriterijaVertejums = null;
         double[] semestraVertejums = null;
+        
+        
 		
-		// Audzēkņu skaita ievade
+		
 		do {
 			System.out.println("Cik studentiem aprēķināsi gala vērtējumu?");
 			while(!scan.hasNextInt()) {
@@ -27,7 +29,6 @@ public class GalvenaKlase {
 		}while(studSk<1);
 		String[] studenti = new String[studSk];
 		
-		// Vērtēšanas kritēriju skaita ievade
 		do {
 			System.out.println("Kāds būs kritēriju skaits?");
 			while(!scan.hasNextInt()) {
@@ -43,7 +44,7 @@ public class GalvenaKlase {
 		
 		scan.nextLine();
 		
-		// Ievada audzēkņu vārdus, uzvārdus
+
 		for(int i=0; i<studenti.length; i++) {
 			do {
 				System.out.println("Ievadi "+(i+1)+". studentu");
@@ -51,7 +52,7 @@ public class GalvenaKlase {
 			} while(!studenti[i].matches("^[\\p{L} ]+$"));
 		}
 		
-		// Definē kritērijus
+
 		int maxSvars = 100, sk = 1;
 		double atlSvars;
 		for(int i=0; i<kriteriji.length; i++) {
@@ -60,7 +61,6 @@ public class GalvenaKlase {
 				kriteriji[i] = scan.nextLine().trim();
 			} while(!kriteriji[i].matches("^[\\p{L} ]+$"));
 			
-			// Norāda katra kritērija svaru
 			do {
 				System.out.println("Ievadi "+(i+1)+". kritērija svaru (max: "+maxSvars+")");
 				while(!scan.hasNextInt()) {
@@ -68,9 +68,8 @@ public class GalvenaKlase {
 					scan.next();
 				}
 				kriterijaSvars[i] = scan.nextInt();
-				/* Minimālā KATRA ATLIKUŠĀ kritērija svars ir 5
-				 * kopējai svaru vērtībai ir jābūt 100 (ne mazāk, ne vairāk)
-				*/
+
+				
 				atlSvars = (maxSvars - kriterijaSvars[i]) / (double)(kriteriji.length - sk);
 			} while(kriterijaSvars[i]>maxSvars || kriterijaSvars[i]<5 || 
 				  (i != kriteriji.length-1 && kriterijaSvars[i] == maxSvars) ||
@@ -81,7 +80,6 @@ public class GalvenaKlase {
 			scan.nextLine();
 		}
 		
-		// Norāda vērtējumu kādu ieguvis katrs audzēknis par katru kritēriju
 		for(int i=0; i<kriterijaVertejums.length; i++) {
 			for(int j=0; j<kriterijaVertejums[i].length; j++) {
 				do {
@@ -95,7 +93,6 @@ public class GalvenaKlase {
 			}
 		}
 		
-		// Gala vērtējuma aprēķināšana
 		double rezultats;
 		for(int i=0; i<studenti.length; i++) {
 			rezultats=0;
@@ -105,7 +102,7 @@ public class GalvenaKlase {
 			semestraVertejums[i] = rezultats;
 		}
 		
-		// Gala vērtējumu izvadīšana
+
 		for(int i=0; i<studenti.length; i++) {	
 			for(int j=0; j<kriteriji.length; j++) {
 				System.out.println("Studenta "+studenti[i]+" vērtējums par kritēriju "+kriteriji[j]+" ir "+kriterijaVertejums[i][j]+", kura svars ir "+kriterijaSvars[j]);
