@@ -63,6 +63,8 @@ public class GalvenaKlase {
 }
 		
 
+
+	public static void kritSk(int maxSvars, int atlSvars){
 		int maxSvars = 100, sk = 1;
 		double atlSvars;
 		for(int i=0; i<kriteriji.length; i++) {
@@ -79,7 +81,8 @@ public class GalvenaKlase {
 				}
 				kriterijaSvars[i] = scan.nextInt();
 
-				
+			}
+		
 				atlSvars = (maxSvars - kriterijaSvars[i]) / (double)(kriteriji.length - sk);
 			} while(kriterijaSvars[i]>maxSvars || kriterijaSvars[i]<5 || 
 				  (i != kriteriji.length-1 && kriterijaSvars[i] == maxSvars) ||
