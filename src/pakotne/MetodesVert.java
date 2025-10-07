@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class MetodesVert {
 
-    
+    public static void izvVert() {
+    	
+    }
 	
 	
 	
