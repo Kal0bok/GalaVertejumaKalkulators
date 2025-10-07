@@ -16,6 +16,22 @@ public class GalvenaKlase {
         int[] kritSvar = null;
         int[][] kritVert = null;
         double[] semeVert = null;
+        
+        String izvele;
+        do {
+        	System.out.println("\nIzvelies metodi");
+        	System.out.println("1. Ievadit skolenu skaitu");
+        	System.out.println("2. Ievadit kriteriju skaitu");
+        	System.out.println("3. Ievadit skolenu vardus");
+        	System.out.println("4. Ievadit definet krietiju");
+        	System.out.println("5. Ievadit kriteriju svaru");
+        	System.out.println("6. sfsdfsdf");
+        	System.out.println("7. Apturet");
+        	
+        	
+        	
+        }while();
+        
 	}
         
         
