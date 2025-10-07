@@ -3,6 +3,7 @@ package pakotne;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+
 public class GalvenaKlase {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -17,17 +18,22 @@ public class GalvenaKlase {
         double[] semestraVertejums = null;
         
         
-		
-		
-		do {
-			System.out.println("Cik studentiem aprēķināsi gala vērtējumu?");
-			while(!scan.hasNextInt()) {
-				System.out.println("Cik studentiem aprēķināsi gala vērtējumu?");
-				scan.next();
-			}
-			studSk = scan.nextInt();
-		}while(studSk<1);
-		String[] studenti = new String[studSk];
+        
+        public static int skaitIev(Scanner scan) {
+            int studSk;
+            do {
+                System.out.println("Cik studentiem aprēķināsi gala vērtējumu?");
+                while (!scan.hasNextInt()) {
+                    System.out.println("Cik studentiem aprēķināsi gala vērtējumu?");
+                    scan.next();
+                }
+                studSk = scan.nextInt();
+            } while (studSk < 1);
+            scan.nextLine();
+            return studSk;
+        }
+	}
+
 		
 		do {
 			System.out.println("Kāds būs kritēriju skaits?");
