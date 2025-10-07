@@ -11,12 +11,12 @@ public class GalvenaKlase {
 		
 		int studSk = 0;
         int kritSk = 0;
-        String[] studenti = null;
-        String[] kriteriji = null;
-        int[] kriterijaSvars = null;
-        int[][] kriterijaVertejums = null;
-        double[] semestraVertejums = null;
-        
+        String[] stud= null;
+        String[] krit = null;
+        int[] kritSvar = null;
+        int[][] kritVert = null;
+        double[] semeVert = null;
+	}
         
         
         public static int skaitIev(Scanner scan) {
@@ -35,7 +35,7 @@ public class GalvenaKlase {
 	}
 
 		
-	public static int kritSk(int studSk, Scanner scan) {
+	public static int kritSkk(int studSk, Scanner scan) {
         int kritSk;
         do {
             System.out.println("Kasds būs kritēriju skaits?");
@@ -51,14 +51,14 @@ public class GalvenaKlase {
 }
 
 	public static String[] vardUzv(int studSk, Scanner scan) {
-    String[] studenti = new String[studSk];
-    for (int i = 0; i < studenti.length; i++) {
+    String[] stud = new String[studSk];
+    for (int i = 0; i < stud.length; i++) {
         do {
             System.out.println("Ievadi " + (i + 1) + ". studentu:");
-            studenti[i] = scan.nextLine().trim();
-        } while (!studenti[i].matches("^[\\p{L} ]+$"));
+            stud[i] = scan.nextLine().trim();
+        } while (!stud[i].matches("^[\\p{L} ]+$"));
     }
-    return studenti;
+    return stud;
 	}
 }
 		
@@ -78,15 +78,30 @@ public class GalvenaKlase {
 		}
 	}
 		
-				atlSvars = (maxSvars - kriterijaSvars[i]) / (double)(kriteriji.length - sk);
-			} while(kriterijaSvars[i]>maxSvars || kriterijaSvars[i]<5 || 
-				  (i != kriteriji.length-1 && kriterijaSvars[i] == maxSvars) ||
-				  (i == kriteriji.length-1 && (maxSvars - kriterijaSvars[i])  > 0) 
-				  || atlSvars < 5);
-			maxSvars -= kriterijaSvars[i];
-			sk++;
-			scan.nextLine();
-		}
+	public static String[] defKrit(int kritSk, Scanner scan) {
+        String[] kriteriji = new String[kritSk];
+        for (int i = 0; i < kritSk; i++) {
+            do {
+                System.out.println("Ievadi " + (i + 1) + ". kritēriju:");
+                kriteriji[i] = scan.nextLine().trim();
+            } while (!kriteriji[i].matches("^[\\p{L} ]+$"));
+        }
+        return kriteriji;
+    }
+	}
+	
+	public static int[] kritSvar(String[] kriteriji, Scanner scan) {
+        int[] kriterijaSvars = new int[kriteriji.length];
+        int maxSvars = 100;
+        for (int i = 0; i < kriteriji.length; i++) {
+            double atlSvars;
+            do {
+                System.out.println("Ievadi " + (i + 1) + ". kritērija svaru (maks: " + maxSvars + "):");
+                while (!scan.hasNextInt()) {
+                    System.out.println("Ievadi " + (i + 1) + ". kritērija svaru:");
+                    scan.next();
+                }
+            
 		
 		for(int i=0; i<kriterijaVertejums.length; i++) {
 			for(int j=0; j<kriterijaVertejums[i].length; j++) {
