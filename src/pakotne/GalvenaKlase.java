@@ -25,18 +25,17 @@ public class GalvenaKlase {
         	System.out.println("3. Ievadit skolenu vardus");
         	System.out.println("4. Ievadit definet krietiju");
         	System.out.println("5. Ievadit kriteriju svaru");
-        	System.out.println("6. sfsdfsdf");
-        	System.out.println("7. Apturet");
+        	System.out.println("6. Apturet");
         	while (!scan.hasNextLine()) {
-                System.out.println("Lūdzu, ievadi skaitli no 1 līdz 7:");
+                System.out.println("Lūdzu, ievadi skaitli no 1 līdz 6:");
                 scan.next();
                 
-        	}
+                {
         switch(izvele) {
         
         case "1":
-        	
-        	break;
+            
+            break;
         	
         case "2":
         	
@@ -58,14 +57,12 @@ public class GalvenaKlase {
         	
         	break;
         	
-        case "7":
-        	
-        	break;
         
-        } while (!izvele.equals("7")); 
+        } while();
+                }
+        
 
-        scan.close();
-    }
+    
         
         
         public static int skaitIev(Scanner scan) {
@@ -125,23 +122,23 @@ public class GalvenaKlase {
 		}
 		
 	public static String[] defKrit(int kritSk, Scanner scan) {
-        String[] kriteriji = new String[kritSk];
+        String[] krit = new String[kritSk];
         for (int i = 0; i < kritSk; i++) {
             do {
                 System.out.println("Ievadi " + (i + 1) + ". kritēriju:");
-                kriteriji[i] = scan.nextLine().trim();
-            } while (!kriteriji[i].matches("^[\\p{L} ]+$"));
+                krit[i] = scan.nextLine().trim();
+            } while (!krit[i].matches("^[\\p{L} ]+$"));
         }
-        return kriteriji;
+        return krit;
     }
 	
-	public static void kritVertej() {
-		for(int i=0; i<kritvert.length; i++) {
+	public static int kritVertej(int kritVert, String stud, Scanner scan, String krit) {
+		for(int i=0; i<kritVert.length; i++) {
 			for(int j=0; j<kritVert[i].length; j++) {
 				do {
-					System.out.println("Ievadi "+stud[i]+" vērtējumu par kritēriju "+kriteriji[j]);
+					System.out.println("Ievadi "+stud[i]+" vērtējumu par kritēriju "+krit[j]);
 					while(!scan.hasNextInt()) {
-						System.out.println("Ievadi "+stud[i]+" vērtējumu par kritēriju "+kriteriji[j]);
+						System.out.println("Ievadi "+stud[i]+" vērtējumu par kritēriju "+krit[j]);
 						scan.next();
 					}
 					kritVert[i][j] = scan.nextInt();
