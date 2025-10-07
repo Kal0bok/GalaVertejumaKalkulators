@@ -5,9 +5,16 @@ import java.util.Scanner;
 
 public class GalvenaKlase {
 	public static void main(String[] args) {
-		int studSk, kritSk;
 		Scanner scan = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("0.#");
+		
+		int studSk = 0;
+        int kritSk = 0;
+        String[] studenti = null;
+        String[] kriteriji = null;
+        int[] kriterijaSvars = null;
+        int[][] kriterijaVertejums = null;
+        double[] semestraVertejums = null;
 		
 		// Audzēkņu skaita ievade
 		do {
