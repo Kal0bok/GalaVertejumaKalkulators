@@ -49,14 +49,18 @@ public class GalvenaKlase {
         return kritSk;
     }
 }
-		
 
-		for(int i=0; i<studenti.length; i++) {
-			do {
-				System.out.println("Ievadi "+(i+1)+". studentu");
-				studenti[i] = scan.nextLine().trim();
-			} while(!studenti[i].matches("^[\\p{L} ]+$"));
-		}
+	public static String[] vardUzv(int studSk, Scanner scan) {
+    String[] studenti = new String[studSk];
+    for (int i = 0; i < studenti.length; i++) {
+        do {
+            System.out.println("Ievadi " + (i + 1) + ". studentu:");
+            studenti[i] = scan.nextLine().trim();
+        } while (!studenti[i].matches("^[\\p{L} ]+$"));
+    }
+    return studenti;
+	}
+}
 		
 
 		int maxSvars = 100, sk = 1;
