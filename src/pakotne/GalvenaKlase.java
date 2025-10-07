@@ -35,20 +35,20 @@ public class GalvenaKlase {
 	}
 
 		
-		do {
-			System.out.println("Kāds būs kritēriju skaits?");
-			while(!scan.hasNextInt()) {
-				System.out.println("Kāds būs kritēriju skaits?");
-				scan.next();
-			}
-			kritSk = scan.nextInt();
-		}while(kritSk<1);
-		String[] kriteriji = new String[kritSk];
-		int[] kriterijaSvars = new int[kritSk];
-		int[][] kriterijaVertejums = new int[studSk][kritSk];
-		double[] semestraVertejums = new double[studSk];
-		
-		scan.nextLine();
+	public static int kritSk(int studSk, Scanner scan) {
+        int kritSk;
+        do {
+            System.out.println("Kasds būs kritēriju skaits?");
+            while (!scan.hasNextInt()) {
+                System.out.println("Kāds būs kritsēriju skaits?");
+                scan.next();
+            }
+            kritSk = scan.nextInt();
+        } while (kritSk < 1);
+        scan.nextLine();
+        return kritSk;
+    }
+}
 		
 
 		for(int i=0; i<studenti.length; i++) {
