@@ -1,46 +1,94 @@
 package pakotne;
 
-    import java.text.DecimalFormat;
-    import java.util.Scanner;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
 
-    public class MetodesVert {
-        private String[] studenti;
-        private String[] kriteriji;
-        private int[] kriterijaSvars;
-        private int[][] kriterijaVertejums;
-        private double[] semestraVertejums;
-        private Scanner scan;
-        private DecimalFormat df;
-        
-        public MetodesVert(String[] studenti, String[] kriteriji, int[] kriterijaSvars,
-                int[][] kriterijaVertejums, double[] semestraVertejums,
-                Scanner scan, DecimalFormat df) {
-     this.studenti = studenti;
-     this.kriteriji = kriteriji;
-     this.kriterijaSvars = kriterijaSvars;
-     this.kriterijaVertejums = kriterijaVertejums;
-     this.semestraVertejums = semestraVertejums;
-     this.scan = scan;
-     this.df = df;
- }
+public class MetodesVert {
+	
+	Scanner scan = new Scanner(System.in);
 
- public void vertSk() {
-     for (int i = 0; i < kriterijaVertejums.length; i++) {
-         for (int j = 0; j < kriterijaVertejums[i].length; j++) {
-             do {
-                 System.out.println("Ievadi " + studenti[i] + " vērtējumu par kritēriju " + kriteriji[j]);
-                 while (!scan.hasNextInt()) {
-                     System.out.println("Ievadi " + studenti[i] + " vērtējumu par kritēriju " + kriteriji[j]);
-                     scan.next();
-                 }
-                 kriterijaVertejums[i][j] = scan.nextInt();
-             } while (kriterijaVertejums[i][j] < 0 || kriterijaVertejums[i][j] > 10);
-         }
-     }
- }
+	
+	// Gala vērtējuma aprēķināšana
+	  void verapr() {
+			double rezultats;
+			for(int i=0; i<studenti.length; i++) {
+				rezultats=0;
+				for(int j=0; j<kriteriji.length; j++) {
+					rezultats += ((double) kriterijaSvars[j]/100)*kriterijaVertejums[i][j];
+				}
+				semestraVertejums[i] = rezultats;
+			}
+	}
+			// Gala vērtējumu izvadīšana
+			  void vertizvad() {
+			for(int i=0; i<studenti.length; i++) {	
+				for(int j=0; j<kriteriji.length; j++) {
+					System.out.println("Studenta "+studenti[i]+" vērtējums par kritēriju "+kriteriji[j]+" ir "+kriterijaVertejums[i][j]+", kura svars ir "+kriterijaSvars[j]);
+				}
+				System.out.println("Semestra vērtējums ir "+df.format(semestraVertejums[i])+" balles"
+						+ "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+			}
+			
+			String izvele;
 
- 
- }
+	        do {
+	            izvele = (String) JOptionPane.showInputDialog(null,
+	                    "Izvēlies darbību", "Darbību izvēle",
+	                    JOptionPane.QUESTION_MESSAGE, null, darbsar, darbsar[0]);
 
-
+	            if (izvele == null) {
+	                izvele = "Apturēt";
+	            }
+			
+			switch(izvele) {
+			case "Ievadit audzekņus":
+				sakitaievade();
+				varduzv();
+				break;
+				
+			case "Ievadit kriterijus":
+				kritsk();
+				break;
+				
+			case "Ievadit kriteriju svarus":
+				krit()
+				minimal();
+				break;
+				
+			case "Ievadit vertejumus":
+				kritetiji()
+				break;
+				
+			case "Labot kriteriju":
+				labotkrit();
+				break;
+	
+			case "Labot kriterija svaru":
+				labotkritsvar();
+				break;
+	
+			case "Labot ieguto vertejumu":
+				labotvert();
+				break;
+	
+			case "Aprekinat gala vertejumu":
+	
+				break;
+				
+			case "Saglabat rezultatus faila":
+				
+				break;
+				
+			case "Nolasit rezultatus faila":
+				
+				break;
+	
+	break;
+			}
+			
+			
+			
+			
+			}
+	
 }
