@@ -9,7 +9,9 @@ public class MetodesVert {
     	
     }
 	
-    
+    public static void vertSk(String[] stud, String[] krit, int[][] kritVert, Scanner scan) {
+        
+    }
 
 	
 	
