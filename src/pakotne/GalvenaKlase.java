@@ -32,7 +32,6 @@ public class GalvenaKlase {
             scan.nextLine();
             return studSk;
         }
-	}
 
 		
 	public static int kritSkk(int studSk, Scanner scan) {
@@ -47,8 +46,8 @@ public class GalvenaKlase {
         } while (kritSk < 1);
         scan.nextLine();
         return kritSk;
+        
     }
-}
 
 	public static String[] vardUzv(int studSk, Scanner scan) {
     String[] stud = new String[studSk];
@@ -60,7 +59,6 @@ public class GalvenaKlase {
     }
     return stud;
 	}
-}
 		
 
 	public static int kritSk(int studSk, Scanner scan) {
@@ -76,7 +74,6 @@ public class GalvenaKlase {
     scan.nextLine();
     return kritSk;
 		}
-	}
 		
 	public static String[] defKrit(int kritSk, Scanner scan) {
         String[] kriteriji = new String[kritSk];
@@ -88,7 +85,6 @@ public class GalvenaKlase {
         }
         return kriteriji;
     }
-	}
 	
 	public static int[] kritSvar(String[] kriteriji, Scanner scan) {
         int[] kriterijaSvars = new int[kriteriji.length];
@@ -116,4 +112,5 @@ public class GalvenaKlase {
    
 		scan.close();
 	}
+}
 }
