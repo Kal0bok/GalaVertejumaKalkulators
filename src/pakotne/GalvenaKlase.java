@@ -27,12 +27,45 @@ public class GalvenaKlase {
         	System.out.println("5. Ievadit kriteriju svaru");
         	System.out.println("6. sfsdfsdf");
         	System.out.println("7. Apturet");
-        	
-        	
-        	
-        }while();
+        	while (!scan.hasNextLine()) {
+                System.out.println("Lūdzu, ievadi skaitli no 1 līdz 7:");
+                scan.next();
+                
+        	}
+        switch(izvele) {
         
-	}
+        case "1":
+        	
+        	break;
+        	
+        case "2":
+        	
+        	break;
+        	
+        case "3":
+	
+        	break;
+	
+        case "4":
+	
+        	break;
+        	
+        case "5":
+        	
+        	break;
+        	
+        case "6":
+        	
+        	break;
+        	
+        case "7":
+        	
+        	break;
+        
+        } while (!izvele.equals("7")); 
+
+        scan.close();
+    }
         
         
         public static int skaitIev(Scanner scan) {
