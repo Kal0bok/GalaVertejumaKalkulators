@@ -135,6 +135,21 @@ public class GalvenaKlase {
         return kriteriji;
     }
 	
+	public static void kritVertej() {
+		for(int i=0; i<kritvert.length; i++) {
+			for(int j=0; j<kritVert[i].length; j++) {
+				do {
+					System.out.println("Ievadi "+stud[i]+" vērtējumu par kritēriju "+kriteriji[j]);
+					while(!scan.hasNextInt()) {
+						System.out.println("Ievadi "+stud[i]+" vērtējumu par kritēriju "+kriteriji[j]);
+						scan.next();
+					}
+					kritVert[i][j] = scan.nextInt();
+				}while(kritVert[i][j]<0 || kritVert[i][j]>10);
+			}
+		}
+	}
+	
 	public static int[] kritSvarr(String[] kriteriji, Scanner scan) {
         int[] kritSvar = new int[kriteriji.length];
         int maxSvars = 100;
