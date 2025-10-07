@@ -86,8 +86,8 @@ public class GalvenaKlase {
         return kriteriji;
     }
 	
-	public static int[] kritSvar(String[] kriteriji, Scanner scan) {
-        int[] kriterijaSvars = new int[kriteriji.length];
+	public static int[] kritSvarr(String[] kriteriji, Scanner scan) {
+        int[] kritSvar = new int[kriteriji.length];
         int maxSvars = 100;
         for (int i = 0; i < kriteriji.length; i++) {
             double atlSvars;
@@ -98,19 +98,16 @@ public class GalvenaKlase {
                     scan.next();
                 }
             
-		
-                kriterijaSvars[i] = scan.nextInt();
-                atlSvars = (i < kriteriji.length - 1) ? (maxSvars - kriterijaSvars[i]) / (double) (kriteriji.length - i - 1) : 0;
-            } while (kriterijaSvars[i] > maxSvars || kriterijaSvars[i] < 5 ||
-                    (i != kriteriji.length - 1 && kriterijaSvars[i] == maxSvars) ||
-                    (i == kriteriji.length - 1 && maxSvars != kriterijaSvars[i]) ||
+                kritSvar[i] = scan.nextInt();
+                atlSvars = (i < kriteriji.length - 1) ? (maxSvars - kritSvar[i]) / (double) (kriteriji.length - i - 1) : 0;
+            } while (kritSvar[i] > maxSvars || kritSvar[i] < 5 ||
+                    (i != kriteriji.length - 1 && kritSvar[i] == maxSvars) ||
+                    (i == kriteriji.length - 1 && maxSvars != kritSvar[i]) ||
                     (i < kriteriji.length - 1 && atlSvars < 5));
-            maxSvars -= kriterijaSvars[i];
+            maxSvars -= kritSvar[i];
             scan.nextLine();
         }
-        return kriterijaSvars;
+        return kritSvar;
    
-		scan.close();
 	}
-}
 }
